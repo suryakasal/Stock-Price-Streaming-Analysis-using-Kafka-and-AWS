@@ -1,0 +1,75 @@
+Microsoft Windows [Version 10.0.22621.2861]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\SUHAS>cd Desktop\Stock-Price-Project
+
+C:\Users\SUHAS\Desktop\Stock-Price-Project>ssh -i "Kafka-stock-analysis-project.pem" ec2-user@ec2-54-208-21-125.compute-1.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sat Jan 13 10:48:33 2024 from 103.176.234.206
+[ec2-user@ip-172-31-80-72 ~]$ ls
+kafka_2.13-3.6.1  kafka_2.13-3.6.1.tgz
+[ec2-user@ip-172-31-80-72 ~]$ cd kafka_2.13-3.6.1
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-topics.sh --create --topic demo_test_topic --bootstrap-server 54.208.21.125:9092 --replication-factor 1 --partitions 1
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Error while executing topic command : Timed out waiting for a node assignment. Call: createTopics
+[2024-01-13 11:10:41,412] ERROR org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: createTopics
+ (kafka.admin.TopicCommand$)
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-topics.sh --create --topic demo_test_topic --bootstrap-server 54.208.21.125:9092 --replication-factor 1 --partitions 1
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Error while executing topic command : Timed out waiting for a node assignment. Call: createTopics
+[2024-01-13 11:12:53,164] ERROR org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: createTopics
+ (kafka.admin.TopicCommand$)
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-topics.sh --create --topic demo_topic --bootstrap-server 54.208.21.125:9092 --replication-factor 1 --partitions 1
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Error while executing topic command : Timed out waiting for a node assignment. Call: createTopics
+[2024-01-13 11:17:27,571] ERROR org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: createTopics
+ (kafka.admin.TopicCommand$)
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-topics.sh --create --topic demo_topic --bootstrap-server 54.208.2.125:9092 --replication-factor 1 --partitions 1 --timeout 60000
+Exception in thread "main" joptsimple.UnrecognizedOptionException: timeout is not a recognized option
+        at joptsimple.OptionException.unrecognizedOption(OptionException.java:108)
+        at joptsimple.OptionParser.handleLongOptionToken(OptionParser.java:510)
+        at joptsimple.OptionParserState$2.handleArgument(OptionParserState.java:56)
+        at joptsimple.OptionParser.parse(OptionParser.java:396)
+        at kafka.admin.TopicCommand$TopicCommandOptions.<init>(TopicCommand.scala:558)
+        at kafka.admin.TopicCommand$.main(TopicCommand.scala:49)
+        at kafka.admin.TopicCommand.main(TopicCommand.scala)
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-topics.sh --create --topic demo_topic --bootstrap-server 54.208.21.125:9092 --replication-factor 1 --partitions 1
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Error while executing topic command : Timed out waiting for a node assignment. Call: createTopics
+[2024-01-13 11:30:21,808] ERROR org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment. Call: createTopics
+ (kafka.admin.TopicCommand$)
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-topics.sh --create --topic demo_topic --bootstrap-server 54.208.21.125:9092 --replication-factor 1 --partitions 1
+WARNING: Due to limitations in metric names, topics with a period ('.') or underscore ('_') could collide. To avoid issues it is best to use either, but not both.
+Created topic demo_topic.
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-console-producer.sh --topic demo_topic --bootstrap-server 54.208.21.125:9092
+>hello world
+>what are you doing
+>client_loop: send disconnect: Connection reset
+
+C:\Users\SUHAS\Desktop\Stock-Price-Project>ssh -i "Kafka-stock-analysis-project.pem" ec2-user@ec2-54-208-21-125.compute-1.amazonaws.com
+   ,     #_
+   ~\_  ####_        Amazon Linux 2023
+  ~~  \_#####\
+  ~~     \###|
+  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
+   ~~       V~' '->
+    ~~~         /
+      ~~._.   _/
+         _/ _/
+       _/m/'
+Last login: Sat Jan 13 14:51:28 2024 from 103.176.234.206
+[ec2-user@ip-172-31-80-72 ~]$ ls
+kafka_2.13-3.6.1  kafka_2.13-3.6.1.tgz
+[ec2-user@ip-172-31-80-72 ~]$ cd kafka_2.13-3.6.1
+[ec2-user@ip-172-31-80-72 kafka_2.13-3.6.1]$ bin/kafka-console-producer.sh --topic demo_topic --bootstrap-server 54.208.21.125:9092
+>^Allow world
+>
